@@ -1,0 +1,32 @@
+{
+  "name": "mic-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "gabor.koos@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"yarn start:devserver\" \"yarn start:client\"",
+    "start:devserver": "nodemon ./server/index.js",
+    "start:client": "cd client && yarn start",
+    "build:client": "cd client && yarn build",
+    "test": "jest --passWithNoTests",
+    "test:client": "cd client && yarn test"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": ["client"],
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1"
+  }
+}
