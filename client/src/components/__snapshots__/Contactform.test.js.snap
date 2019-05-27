@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  id="lead_form"
+  onSubmit={[Function]}
+>
+  <h2>
+    Enter your details here
+  </h2>
+  <div
+    className="my-2"
+  >
+    You complete the form. We call you. Good things happen.
+  </div>
+  
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control form-control-lg"
+      maxLength="100"
+      name="name"
+      onChange={[Function]}
+      placeholder="Your full name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control form-control-lg"
+      maxLength="100"
+      name="business_name"
+      onChange={[Function]}
+      placeholder="Your company name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control form-control-lg"
+      maxLength="80"
+      name="email"
+      onChange={[Function]}
+      placeholder="Your email address"
+      required={true}
+      type="email"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="form-control form-control-lg"
+      name="telephone_number"
+      onChange={[Function]}
+      pattern="[0-9]{10,13}"
+      placeholder="Your telephone number"
+      required={true}
+      type="tel"
+    />
+    <br />
+  </div>
+  <button
+    className="btn btn-primary form-control form-control-lg"
+  >
+    Next
+  </button>
+</form>
+`;
