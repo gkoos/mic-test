@@ -50,10 +50,18 @@ For the frontend:
 ```
 yarn test:client
 ```
+Update the frontend snapshot tests:
+```
+yarn test:client:update
+```
 The app uses jest to run tests. To avoid ejecting the client app the frontend and the backend tests have to be run separately.
 
 ## Todo
 - The frontend validation does not exactly match the backend validation. This may cause problems as on the clien side we consider
 the frontend validation to be the single source of truth.
 - On the frontend only a few snapshot tests are added, interaction should be tested with enzyme as well.
-
+In fact those are the more meaningful tests here, I just had to timebox the exercise.
+- Return custom error messages instead of the ajv library's own error messages as they are not too meaningful.
+- For phone number validation the regex `/^(\+44|0)\d{10}$/` is used, after long experimentin with the Lead API this seems
+to match the validation there but this may need some further investigation.
+- Add more test for the individual fields.

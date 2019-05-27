@@ -1,4 +1,19 @@
 const fetch = require("node-fetch");
+const ajv = require("ajv")({ allErrors: true });
+const normalise = require('ajv-error-messages');
+
+const schema = require("./schema.json");
+
+validateParams = async (ctx, next) => {
+    const valid = ajv.validate(schema, ctx.request.body);
+    if (!valid) {
+        ctx.status = 400;
+        ctx.body = { message: "Format errors on validation", errors: normalise(ajv.errors) }
+        return;
+    }
+
+    await next();
+}
 
 jsonToQueryString = json => {
     return Object.keys(json).map(key => {
@@ -28,4 +43,4 @@ sendData = async (method, url, body) => {
     return { status: response.status, body: responseBody };
 }
 
-module.exports = { sendData };
+module.exports = { sendData, validateParams };

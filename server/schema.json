@@ -1,0 +1,26 @@
+{
+  "description": "Contact form post data",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "pattern": "^\\w+\\s"
+    },
+    "business_name": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 80
+    },
+    "telephone_number": {
+      "type": "string",
+      "pattern": "^(\\+44|0)\\d{10}$"
+    }
+  },
+  "required": ["name", "business_name", "email", "telephone_number"]
+}
