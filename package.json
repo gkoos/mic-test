@@ -10,7 +10,8 @@
     "start:client": "cd client && yarn start",
     "build:client": "cd client && yarn build",
     "test": "jest --passWithNoTests",
-    "test:client": "cd client && yarn test"
+    "test:client": "cd client && yarn test",
+    "test:client:update": "cd client && yarn test:update"
   },
   "jest": {
     "modulePathIgnorePatterns": [

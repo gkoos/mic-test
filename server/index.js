@@ -9,8 +9,8 @@ const router = require("./routes");
 const app = new Koa();
 
 app
-    .use(serve("./client/build"))
     .use(bodyParser())
+    .use(serve("./client/build"))
     .use(router.routes())
     .use(router.allowedMethods())
     .on("error", e => console.log(`ERROR: ${e.message}`));
